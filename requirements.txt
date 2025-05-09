@@ -1,0 +1,4 @@
+Faker
+fpdf
+selenium
+webdriver_manager
