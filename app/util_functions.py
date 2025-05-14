@@ -221,7 +221,7 @@ def fill_form(driver: webdriver.Chrome, fake_identity: dict) -> None:
         print("filling out page 2...")
         
         
-        driver.find_element("id", f"multiQuestionAnswer1285162_{random.randint(0,4)}").click()
+        driver.find_element("id", f"multiQuestionAnswer1285162_{random.randint(0,3)}").click()
         time.sleep(1)
         driver.find_element("id", f"multiQuestionAnswer1285163_{random.randint(0,1)}").click()
         time.sleep(1)
