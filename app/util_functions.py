@@ -132,7 +132,10 @@ def fill_form(driver: webdriver.Chrome, fake_identity: dict) -> None:
     Fill the form with the provided fake identity data.
     """
     try:
-        driver.get("https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3223576")
+        # app 2
+        # driver.get("https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3223576")
+        # app 1
+        driver.get("https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3173329")
         
         # wait until the page is loaded with implicit wait
         driver.implicitly_wait(10)
@@ -213,36 +216,54 @@ def fill_form(driver: webdriver.Chrome, fake_identity: dict) -> None:
         
         
         element = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "multiQuestionAnswer1285162_0"))
+            # app 2
+            # EC.element_to_be_clickable((By.ID, "multiQuestionAnswer1285162_0"))
+            # app 1
+            EC.element_to_be_clickable((By.ID, "multiQuestionAnswer1258625_0"))
         )
         time.sleep(1)
 
         
         print("filling out page 2...")
         
-        
-        driver.find_element("id", f"multiQuestionAnswer1285162_{random.randint(0,3)}").click()
+        # app 2
+        # driver.find_element("id", f"multiQuestionAnswer1285162_{random.randint(0,3)}").click()
+        # time.sleep(1)
+        # driver.find_element("id", f"multiQuestionAnswer1285163_{random.randint(0,1)}").click()
+        # time.sleep(1)
+
+        # app 1
+        driver.find_element("id", "multiQuestionAnswer1258625_0").click()
         time.sleep(1)
-        driver.find_element("id", f"multiQuestionAnswer1285163_{random.randint(0,1)}").click()
+        driver.find_element("id", "multiQuestionAnswer1258626_0").click()
+        time.sleep(1)
+        driver.find_element("id", "multiQuestionAnswer1258627_0").click()
+        time.sleep(1)
+        driver.find_element("id", f"multiQuestionAnswer1258628_{random.randint(0,4)}").click()
+        time.sleep(1)
+        driver.find_element("id", "multiQuestionAnswer1258630_0").click()
+        time.sleep(1)
+        driver.find_element("id", "multiQuestionAnswer1258631_0").click()
         time.sleep(1)
         
-        for i in range(7):
+        # app 2
+        # for i in range(7):
             
-            # half of the time click the checkbox
-            if random.randint(0,1) == 0:
-                driver.find_element("id", f"multiQuestionAnswer1285164_{i}").click()
-                time.sleep(1)
+        #     # half of the time click the checkbox
+        #     if random.randint(0,1) == 0:
+        #         driver.find_element("id", f"multiQuestionAnswer1285164_{i}").click()
+        #         time.sleep(1)
                 
-        # random text to screener-question-3-textarea
-        driver.find_element("id", "screener-question-3-textarea").send_keys(fake_sentence())
+        # # random text to screener-question-3-textarea
+        # driver.find_element("id", "screener-question-3-textarea").send_keys(fake_sentence())
 
         
-        driver.find_element("id", f"multiQuestionAnswer1285182_{random.randint(0,1)}").click()
-        time.sleep(1)
-        driver.find_element("id", f"multiQuestionAnswer1285183_{random.randint(0,3)}").click()
-        time.sleep(1)
-        driver.find_element("id", f"multiQuestionAnswer1286455_{random.randint(0,1)}").click()
-        time.sleep(1)
+        # driver.find_element("id", f"multiQuestionAnswer1285182_{random.randint(0,1)}").click()
+        # time.sleep(1)
+        # driver.find_element("id", f"multiQuestionAnswer1285183_{random.randint(0,3)}").click()
+        # time.sleep(1)
+        # driver.find_element("id", f"multiQuestionAnswer1286455_{random.randint(0,1)}").click()
+        # time.sleep(1)
         
         
         driver.find_element("id", "btn-submit").click()
